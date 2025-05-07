@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <controller_preset/>
+        <includes>69d21d1fff0162106dc3ffffffffff3b</includes>
+        <macroponent display_value="Tourney Admin Controller">fd2c7a0937f022102fdc40d7e4924b6d</macroponent>
+        <name>Update current round</name>
+        <preset/>
+        <required_translations>[]</required_translations>
+        <script><![CDATA[/**
+* @param {params} params
+* @param {api} params.api
+* @param {any} params.event
+* @param {any} params.imports
+* @param {ApiHelpers} params.helpers
+*/
+function handler({api, event, helpers, imports}) {
+    console.log('[Tourney Admin Controller]', 'Update Current Round');
+    try {
+        if (api.data.look_up_a_single_record_1.result.end_datetime.value && api.state.currentRound) {
+            console.log('[Tourney Admin Controller]', 'Update Current Round END');
+        } else {
+            const round_results = api.data.rounds.results ?? [];
+            console.log('[Tourney Admin Controller]', { round_results, pyaload: event.payload });
+            var currentRound = round_results.find(r => {
+                return r.state.value === 'started' || r.championship_round.value;
+            });
+            if (!currentRound && round_results.length > 0 && round_results[0].state.value === 'not_started') {
+                currentRound = round_results[0]
+            } else if (!currentRound && round_results.length > 0) {
+                currentRound = round_results[round_results.length - 1];
+            }
+
+            console.log('[Tourney Admin Controller]', { currentRound });
+            api.setState('currentRound', currentRound);
+
+            const updateTournamentStatus = imports['x_snc_tourney_ad_0.updateTournamentStatus'];
+            updateTournamentStatus(api);
+        }
+
+        helpers.timing.setTimeout(function() {
+            console.log('[Tourney Admin Controller]', 'Updating match_records');
+            api.data.match_records.refresh();
+        }, 1000);
+
+
+        console.log('[Tourney Admin Controller]', 'Update Current Round END');
+    } catch (e) {
+        console.error('[Tourney Admin Controller]', e);
+    }
+
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-26 21:29:45</sys_created_on>
+        <sys_id>ab110957ffcd22106dc3ffffffffffa4</sys_id>
+        <sys_mod_count>32</sys_mod_count>
+        <sys_name>Update current round</sys_name>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_ux_client_script_ab110957ffcd22106dc3ffffffffffa4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-28 13:11:18</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

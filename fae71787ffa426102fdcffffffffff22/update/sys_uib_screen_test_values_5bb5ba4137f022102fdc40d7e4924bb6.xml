@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_uib_screen_test_values">
+    <sys_uib_screen_test_values action="INSERT_OR_UPDATE">
+        <macroponent_config>{
+    "2b3abad077811110960ced43ba5a991e": {},
+    "eebfe69877de9110960ced43ba5a99ec": {
+        "configIdentifierId": null,
+        "perfLogging": null,
+        "relatedItemData": [],
+        "relatedItemSysids": [
+            "53958ff0c0a801640171ec76aa0c8f86"
+        ]
+    },
+    "7cb6eb2e77321510960ced43ba5a9904": {},
+    "45a2efd50732111017b703767cd3008d": {
+        "ciSysIds": [
+            "53958ff0c0a801640171ec76aa0c8f86"
+        ],
+        "filteredArray": []
+    },
+    "fdcde28377221110960ced43ba5a99e7": {},
+    "07811f1077a31110960ced43ba5a9949": {},
+    "365c0e890767111017b703767cd3008e": {
+        "configIdentifierId": null
+    },
+    "9585a6bf5b73011046f91c8fb681c7d6": {},
+    "6a392db743c5211017b739603ab8f20c": {
+        "inputData": [],
+        "sortCategoriesArray": [
+            {
+                "id": "name",
+                "label": "Name"
+            },
+            {
+                "id": "busines_criticality",
+                "label": "Business criticality"
+            },
+            {
+                "id": "class",
+                "label": "Class"
+            },
+            {
+                "id": "discovery_source",
+                "label": "Discovery source"
+            },
+            {
+                "id": "last_discovered",
+                "label": "Last discovered"
+            },
+            {
+                "id": "operational_status",
+                "label": "Operational status"
+            },
+            {
+                "id": "owned_by",
+                "label": "Owner"
+            }
+        ]
+    },
+    "1a3364d2439d211017b739603ab8f23e": {
+        "inputData": [],
+        "sortCategoriesArray": []
+    },
+    "80c7ca40ffb92110f563bb63aad33ef3": {},
+    "6de5e4974343611017b739603ab8f2c1": {
+        "allNodes": null,
+        "configIdentifierId": null,
+        "relatedItemCategorySysId": "",
+        "relatedItemSysids": [
+            "53958ff0c0a801640171ec76aa0c8f86"
+        ]
+    },
+    "056263be4343211017b739603ab8f237": {},
+    "sysId": "a7587f7eff4922106dc3ffffffffff74",
+    "4e2c7a0937f022102fdc40d7e4924b72": {
+        "tourneySysId": "a42962c137b022102fdc40d7e4924b46"
+    }
+}</macroponent_config>
+        <screen display_value="Default">d7b5ba4137f022102fdc40d7e4924bb3</screen>
+        <sys_class_name>sys_uib_screen_test_values</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-07 19:25:01</sys_created_on>
+        <sys_id>5bb5ba4137f022102fdc40d7e4924bb6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_uib_screen_test_values_5bb5ba4137f022102fdc40d7e4924bb6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-26 13:12:22</sys_updated_on>
+    </sys_uib_screen_test_values>
+</record_update>

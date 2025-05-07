@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="74cadb4bffa426102fdcffffffffffb3" label="Tourney Round" max_length="40" name="x_snc_tourney_ad_0_tourney_round" type="collection">
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Tournament" mandatory="true" max_length="32" name="tournament" reference="x_snc_tourney_ad_0_tournament" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" calculation="(function calculatedFieldValue(current) {&#10;&#9;const matchGr = new GlideRecord('x_snc_tourney_ad_0_tourney_match');&#10;&#9;matchGr.addActiveQuery();&#10;&#9;matchGr.addQuery('round', current.sys_id);&#10;&#9;matchGr.query();&#10;&#9;if (matchGr.getRowCount() == 1) {&#10;&#9;&#9;return 'true';&#10;&#9;}&#10;&#9;return 'false';  // return the calculated value&#10;})(current);" label="Championship Round" max_length="40" name="championship_round" type="boolean" virtual="true"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="not_started" function_definition="not_started" label="State" max_length="40" name="state" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Started" sequence="1" value="started"/>
+                <element inactive_on_update="false" label="Ended" sequence="2" value="ended"/>
+                <element inactive_on_update="false" label="Not started" sequence="0" value="not_started"/>
+            </choice>
+        </element>
+        <element label="Round end" max_length="255" name="round_end" type="calendar_date_time"/>
+        <element attributes="edge_encryption_enabled=true" default="0" function_definition="0" label="Order" mandatory="true" max_length="255" name="order" type="integer"/>
+        <element display="true" label="Round Name" mandatory="true" max_length="255" name="name" type="string_full_utf8"/>
+        <element label="Round Start" mandatory="true" max_length="255" name="round_start" type="calendar_date_time"/>
+        <index name="index">
+            <element name="tournament"/>
+        </index>
+    </element>
+</database>

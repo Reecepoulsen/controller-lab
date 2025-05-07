@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_data_broker_transform">
+    <sys_ux_data_broker_transform action="INSERT_OR_UPDATE">
+        <acl_failure_result/>
+        <api_name>x_snc_tourney_ad_0.Update Round</api_name>
+        <batch_exclude>false</batch_exclude>
+        <description>Updates a round's state</description>
+        <mutates_server_data>true</mutates_server_data>
+        <name>Update Round</name>
+        <output_schema>[]</output_schema>
+        <private>false</private>
+        <props>[{&#13;
+    "name": "round",&#13;
+    "label": "Round",&#13;
+    "fieldType": "reference",&#13;
+    "valueType": "string",&#13;
+    "description": "Round sys_id",&#13;
+     "readOnly": false,&#13;
+    "mandatory": true,&#13;
+    "typeMetadata": {&#13;
+        "referenceTable": "x_snc_tourney_ad_0_tourney_round"&#13;
+    },&#13;
+    "defaultValue": null&#13;
+}, {&#13;
+    "name": "state",&#13;
+    "label": "State",&#13;
+    "fieldType": "choice",&#13;
+    "valueType": "string",&#13;
+    "description": "The state of the round",&#13;
+     "readOnly": false,&#13;
+    "mandatory": true,&#13;
+    "typeMetadata": {&#13;
+        "choices": [&#13;
+            { "id": "started", "label": "Started", "value": "started"},&#13;
+            { "id": "ended", "label": "Ended", "value": "ended"}&#13;
+        ]&#13;
+    },&#13;
+    "defaultValue": null&#13;
+}]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <script><![CDATA[function transform(input) {
+	const roundGr = new GlideRecord('x_snc_tourney_ad_0_tourney_round');
+	roundGr.get(input.round);
+	roundGr.setValue('state', input.state);
+	const dt = new GlideDateTime();
+	if (input.state === 'started') {
+		roundGr.setValue('round_start', dt.getValue());
+	} else if (input.state === 'ended') {
+		roundGr.setValue('round_end', dt.getValue());
+	}
+	const updated = roundGr.update();
+	if (!updated) {
+		throw new Error(`Could not update round: ${roundGr.getLastErrorMessage() ?? 'Unknown error'}`);
+	}
+}]]></script>
+        <sys_class_name>sys_ux_data_broker_transform</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-27 14:00:20</sys_created_on>
+        <sys_id>8a3b2863ff0562106dc3ffffffffffc7</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Update Round</sys_name>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_ux_data_broker_transform_8a3b2863ff0562106dc3ffffffffffc7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-27 14:11:16</sys_updated_on>
+    </sys_ux_data_broker_transform>
+    <sys_translated_text action="delete_multiple" query="documentkey=8a3b2863ff0562106dc3ffffffffffc7"/>
+</record_update>

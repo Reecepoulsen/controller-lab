@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_event">
+    <sys_ux_event action="INSERT_OR_UPDATE">
+        <description/>
+        <event_name>TOURNEY_ADMIN_CTRL#DECIDE_MATCH</event_name>
+        <explicit_api_name/>
+        <interfaces/>
+        <label>Decide Match</label>
+        <props>[
+    {
+        "fieldType": "string",
+        "id": "4IR43RvVeCkRe9poI4776lOBQv",
+        "interfaceApiName": "",
+        "label": "match",
+        "mandatory": false,
+        "name": "matchId",
+        "readOnly": false,
+        "type": "string",
+        "typeMetadata": null
+    },
+    {
+        "fieldType": "string",
+        "id": "wDaDavWICkgc9SkGqJyTvoIR",
+        "interfaceApiName": "",
+        "label": "Winner",
+        "mandatory": false,
+        "name": "winner",
+        "readOnly": false,
+        "type": "string",
+        "typeMetadata": null
+    }
+]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <sys_class_name>sys_ux_event</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-25 21:10:35</sys_created_on>
+        <sys_id>5cf9b3beff4922106dc3ffffffffff31</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Decide Match</sys_name>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_ux_event_5cf9b3beff4922106dc3ffffffffff31</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-25 22:17:22</sys_updated_on>
+    </sys_ux_event>
+    <sys_translated_text action="delete_multiple" query="documentkey=5cf9b3beff4922106dc3ffffffffff31"/>
+</record_update>

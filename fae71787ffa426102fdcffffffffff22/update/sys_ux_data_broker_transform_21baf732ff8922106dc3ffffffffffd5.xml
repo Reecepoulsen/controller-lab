@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_data_broker_transform">
+    <sys_ux_data_broker_transform action="INSERT_OR_UPDATE">
+        <acl_failure_result/>
+        <api_name>x_snc_tourney_ad_0.Create Tournament Round</api_name>
+        <batch_exclude>false</batch_exclude>
+        <description>Creates all of the data for a Tournament Round, looking at the available participants and creating the round record and records for each match in that round.</description>
+        <mutates_server_data>true</mutates_server_data>
+        <name>Create Tournament Round</name>
+        <output_schema>[{&#13;
+    "name": "round",&#13;
+    "label": "Round",&#13;
+    "fieldType": "reference",&#13;
+    "valueType": "string",&#13;
+    "typeMetadata": {&#13;
+        "referenceTable": "x_snc_tourney_ad_0_tourney_round"&#13;
+    },&#13;
+    "defaultValue": null&#13;
+}]</output_schema>
+        <private>false</private>
+        <props>[{&#13;
+    "name": "tournament",&#13;
+    "label": "Tournament",&#13;
+    "fieldType": "reference",&#13;
+    "valueType": "string",&#13;
+    "description": "Tournament sys_id",&#13;
+     "readOnly": false,&#13;
+    "mandatory": true,&#13;
+    "typeMetadata": {&#13;
+        "referenceTable": "x_snc_tourney_ad_0_tournament"&#13;
+    },&#13;
+    "defaultValue": null&#13;
+}]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <script><![CDATA[function transform(input) {
+	// Get a list of all participants in the tourney
+	function toCamel(name) {
+		return name.toLowerCase()
+			.replace(/_([a-z])/g, (_, l) => l.toUpperCase())
+			.replace('_', '');
+	}
+
+	const participantGr = new GlideRecord('x_snc_tourney_ad_0_tournament_entrant');
+	participantGr.addActiveQuery();
+	participantGr.addQuery('tournament', input.tournament);
+	participantGr.query();
+	let participants = [];
+	while (participantGr.next()) {
+		const elements = participantGr.getElements();
+		const participant = elements.reduce((acc, el) => {
+			return {
+				...acc,
+				[toCamel(el.getName())]: participantGr.getValue(el.getName())
+			};
+		}, {});
+		participants.push(participant);
+	}
+
+	// Get the losers of each match and remove that loser from the list
+	let matchGr = new GlideRecord('x_snc_tourney_ad_0_tourney_match');
+	matchGr.addActiveQuery();
+	matchGr.addQuery('tournament', input.tournament);
+	matchGr.addNotNullQuery('winner');
+	matchGr.query();
+
+	function removeParticipant(id) {
+		participants = participants.reduce((acc, p) => {
+			if (p.sysId === id) {
+				return acc;
+			}
+			return [...acc, p];
+		}, []);
+	}
+
+	while (matchGr.next()) {
+		if (matchGr.getValue('winner') === matchGr.getValue('participant_a')) {
+			removeParticipant(matchGr.getValue('participant_b'));
+		} else {
+			removeParticipant(matchGr.getValue('participant_a'));
+		}
+	}
+
+	// Now we _should_ have an even number of participants left over
+	if (participants.length % 2 !== 0) {
+		gs.error("Got a non-even number of participants ({1}) for tourney {0}", [input.tournament, participants.length]);
+		throw new Error('A non-even number of participants for new round');
+	}
+
+	// We should _also_ have at least 2 participants or the tournament should end
+	if (participants.length < 2) {
+		gs.error("Less than two participants ({0} are left in tournament {1}", [participants.length, input.tournament]);
+		throw new Error("Less than 2 participants are left");
+	}
+
+	// Now we can create the new round record
+	let roundGr = new GlideRecord('x_snc_tourney_ad_0_tourney_round');
+	roundGr.addActiveQuery();
+	roundGr.addQuery('tournament', input.tournament);
+	roundGr.orderByDesc('order');
+	roundGr.query();
+	let hasNext = roundGr.next();
+	const lastRoundOrder = hasNext ? Number(roundGr.getValue('order')) : 0;
+	roundGr = new GlideRecord('x_snc_tourney_ad_0_tourney_round');
+	roundGr.newRecord();
+	roundGr.setValue('name', 'Round ' + lastRoundOrder + 1);
+	roundGr.setValue('state', 'not_started');
+	roundGr.setValue('order', lastRoundOrder + 1);
+	roundGr.setValue('tournament', input.tournament);
+	const round = roundGr.insert();
+
+	// Now we will create matches by choosing two players at random from the pool and putting them in a match, and removing
+	// them from the pool.
+	function pullOutRandomParticipant() {
+		const index = Math.floor(Math.random() * participants.length);
+		const p = participants[index];
+		removeParticipant(p.sysId);
+		return p;
+	}
+
+	matchGr = new GlideRecord('x_snc_tourney_ad_0_tourney_match');
+	while (participants.length >= 2) {
+		matchGr.newRecord();
+		const participant_a = pullOutRandomParticipant();
+		const participant_b = pullOutRandomParticipant();
+		matchGr.setValue('participant_a', participant_a.sysId);
+		matchGr.setValue('participant_b', participant_b.sysId);
+		matchGr.setValue('round', round);
+		matchGr.setValue('tournament', input.tournament);
+		const inserted = matchGr.insert();
+		gs.info("Inserted match with sysId {0}", [matchGr.getUniqueValue()]);
+	}
+
+	return {
+		round: round
+	};
+}]]></script>
+        <sys_class_name>sys_ux_data_broker_transform</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-25 22:06:19</sys_created_on>
+        <sys_id>21baf732ff8922106dc3ffffffffffd5</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Create Tournament Round</sys_name>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_ux_data_broker_transform_21baf732ff8922106dc3ffffffffffd5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-28 00:31:40</sys_updated_on>
+    </sys_ux_data_broker_transform>
+    <sys_translated_text action="delete_multiple" query="documentkey=21baf732ff8922106dc3ffffffffffd5"/>
+</record_update>

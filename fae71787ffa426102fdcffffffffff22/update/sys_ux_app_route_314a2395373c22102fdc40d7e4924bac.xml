@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_app_route">
+    <sys_ux_app_route action="INSERT_OR_UPDATE">
+        <app_config/>
+        <description/>
+        <extension_point display_value="Tourney Right Pane">dc02c7d1377822102fdc40d7e4924bfc</extension_point>
+        <fields>table,sysId</fields>
+        <icon/>
+        <name>Record</name>
+        <optional_parameters>view</optional_parameters>
+        <order>0</order>
+        <parent_macroponent display_value="Workspace App Shell">c276387cc331101080d6d3658940ddd2</parent_macroponent>
+        <parent_macroponent_composition_element_id/>
+        <route_type>record</route_type>
+        <screen_type display_value="Record">b14a2395373c22102fdc40d7e4924ba9</screen_type>
+        <sys_class_name>sys_ux_app_route</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-08 17:53:04</sys_created_on>
+        <sys_id>314a2395373c22102fdc40d7e4924bac</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Record</sys_name>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_ux_app_route_314a2395373c22102fdc40d7e4924bac</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-08 17:55:09</sys_updated_on>
+    </sys_ux_app_route>
+    <sys_translated_text action="delete_multiple" query="documentkey=314a2395373c22102fdc40d7e4924bac"/>
+</record_update>

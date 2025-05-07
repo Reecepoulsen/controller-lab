@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_uib_screen_test_values">
+    <sys_uib_screen_test_values action="INSERT_OR_UPDATE">
+        <macroponent_config>{
+    "rootNode": "53958ff0c0a801640171ec76aa0c8f86",
+    "selectedNodeSysid": "53958ff0c0a801640171ec76aa0c8f86",
+    "selectedNodeClass": "cmdb_ci_linux_server",
+    "levels": "3",
+    "selectedConnectionId": "",
+    "presetId": "",
+    "debugger": ""
+}</macroponent_config>
+        <screen display_value="Default">4ec3b6cd37b022102fdc40d7e4924bbb</screen>
+        <sys_class_name>sys_uib_screen_test_values</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-07 19:16:29</sys_created_on>
+        <sys_id>cac3b6cd37b022102fdc40d7e4924bf0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_uib_screen_test_values_cac3b6cd37b022102fdc40d7e4924bf0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-07 19:16:29</sys_updated_on>
+    </sys_uib_screen_test_values>
+</record_update>

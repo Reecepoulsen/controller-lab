@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>806eba643bdde210b7f26624c3e45aa5</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_tourney_ad_0_tournament_entrant">
+    <x_snc_tourney_ad_0_tournament_entrant action="INSERT_OR_UPDATE">
+        <sys_created_by>mgopw</sys_created_by>
+        <sys_created_on>2025-05-01 03:17:30</sys_created_on>
+        <sys_id>806eba643bdde210b7f26624c3e45aa5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>mgopw</sys_updated_by>
+        <sys_updated_on>2025-05-01 03:17:30</sys_updated_on>
+        <tournament display_value="Tournament One">4cfdf6643bdde210b7f26624c3e45a77</tournament>
+        <user display_value="Fred Luddy">5137153cc611227c000bbd1bd8cd2005</user>
+    </x_snc_tourney_ad_0_tournament_entrant>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>mgopw</sys_created_by>
+        <sys_created_on>2025-05-01 03:26:44</sys_created_on>
+        <sys_id>e38047283bdde210b7f26624c3e45ad0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Fred Luddy</sys_name>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_metadata_link_e38047283bdde210b7f26624c3e45ad0</sys_update_name>
+        <sys_updated_by>mgopw</sys_updated_by>
+        <sys_updated_on>2025-05-01 03:26:44</sys_updated_on>
+        <tablename>x_snc_tourney_ad_0_tournament_entrant</tablename>
+    </sys_metadata_link>
+</record_update>

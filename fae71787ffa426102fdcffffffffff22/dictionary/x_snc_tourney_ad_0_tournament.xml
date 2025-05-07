@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="ea7813c7ffa426102fdcffffffffff68" label="Tournament" max_length="40" name="x_snc_tourney_ad_0_tournament" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Start Date" max_length="255" name="start_datetime" type="datetime"/>
+        <element display="true" label="Event name" mandatory="true" max_length="255" name="event_name" type="string_full_utf8"/>
+        <element attributes="edge_encryption_enabled=true" label="End Date" max_length="255" name="end_datetime" type="datetime"/>
+    </element>
+</database>

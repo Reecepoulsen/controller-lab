@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>d98e32a43bdde210b7f26624c3e45a41</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_tourney_ad_0_tourney_match">
+    <x_snc_tourney_ad_0_tourney_match action="INSERT_OR_UPDATE">
+        <match_end>2025-05-01 03:17:58</match_end>
+        <name>Chuck Tomasi vs Beth Anglin</name>
+        <participant_a display_value="Chuck Tomasi">bb0e7a643bdde210b7f26624c3e45a29</participant_a>
+        <participant_b display_value="Beth Anglin">e42eba643bdde210b7f26624c3e45a9e</participant_b>
+        <round display_value="Round 01">d58e32a43bdde210b7f26624c3e45a40</round>
+        <sys_created_by>mgopw</sys_created_by>
+        <sys_created_on>2025-05-01 03:17:50</sys_created_on>
+        <sys_id>d98e32a43bdde210b7f26624c3e45a41</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>mgopw</sys_updated_by>
+        <sys_updated_on>2025-05-01 03:17:58</sys_updated_on>
+        <tournament display_value="Tournament One">4cfdf6643bdde210b7f26624c3e45a77</tournament>
+        <winner display_value="Chuck Tomasi">bb0e7a643bdde210b7f26624c3e45a29</winner>
+    </x_snc_tourney_ad_0_tourney_match>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>mgopw</sys_created_by>
+        <sys_created_on>2025-05-01 03:28:11</sys_created_on>
+        <sys_id>34e04f283bdde210b7f26624c3e45a0d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Chuck Tomasi vs Beth Anglin</sys_name>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_metadata_link_34e04f283bdde210b7f26624c3e45a0d</sys_update_name>
+        <sys_updated_by>mgopw</sys_updated_by>
+        <sys_updated_on>2025-05-01 03:28:11</sys_updated_on>
+        <tablename>x_snc_tourney_ad_0_tourney_match</tablename>
+    </sys_metadata_link>
+</record_update>

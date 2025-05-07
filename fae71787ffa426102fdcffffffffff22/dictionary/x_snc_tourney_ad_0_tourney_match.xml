@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4c9c930fffa426102fdcffffffffff90" label="Tourney Match" max_length="40" name="x_snc_tourney_ad_0_tourney_match" type="collection">
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Winner" max_length="32" name="winner" reference="x_snc_tourney_ad_0_tournament_entrant" reference_qual="javascript:&quot;sys_id=&quot;+current.participant_a+&quot;^ORsys_id=&quot;+current.participant_b" type="reference" use_reference_qualifier="advanced"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Tournament" mandatory="true" max_length="32" name="tournament" reference="x_snc_tourney_ad_0_tournament" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Participant A" mandatory="true" max_length="32" name="participant_a" reference="x_snc_tourney_ad_0_tournament_entrant" type="reference"/>
+        <element default="glidefunction:concat(participant_a.user.first_name, ' ', participant_a.user.last_name, &quot; vs &quot;, participant_b.user.first_name, ' ', participant_b.user.last_name)" display="true" function_definition="glidefunction:concat(participant_a.user.first_name, ' ', participant_a.user.last_name, &quot; vs &quot;, participant_b.user.first_name, ' ', participant_b.user.last_name)" function_field="true" label="Name" max_length="255" name="name" read_only="true" type="string_full_utf8"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Participant B" mandatory="true" max_length="32" name="participant_b" reference="x_snc_tourney_ad_0_tournament_entrant" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Round" mandatory="true" max_length="32" name="round" reference="x_snc_tourney_ad_0_tourney_round" reference_qual="javascript:&quot;tournament=&quot; + current.tournament" type="reference" use_reference_qualifier="advanced"/>
+        <element attributes="edge_encryption_enabled=true" label="Match end" max_length="255" name="match_end" type="datetime"/>
+        <index name="index">
+            <element name="participant_a"/>
+        </index>
+        <index name="index2">
+            <element name="participant_b"/>
+        </index>
+        <index name="index3">
+            <element name="round"/>
+        </index>
+        <index name="index4">
+            <element name="tournament"/>
+        </index>
+        <index name="index5">
+            <element name="winner"/>
+        </index>
+    </element>
+</database>

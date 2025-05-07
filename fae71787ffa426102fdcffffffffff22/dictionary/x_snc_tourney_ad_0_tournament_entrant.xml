@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="088beb0fffe426102fdcffffffffffb9" label="Tournament Entrant" max_length="40" name="x_snc_tourney_ad_0_tournament_entrant" type="collection">
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" display="true" label="User" mandatory="true" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Tournament" mandatory="true" max_length="32" name="tournament" reference="x_snc_tourney_ad_0_tournament" type="reference"/>
+        <index name="index">
+            <element name="tournament"/>
+        </index>
+        <index name="index2">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

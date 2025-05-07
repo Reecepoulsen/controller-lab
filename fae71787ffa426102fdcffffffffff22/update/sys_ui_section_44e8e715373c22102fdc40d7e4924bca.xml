@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="x_snc_tourney_ad_0_tournament_entrant" section_id="44e8e715373c22102fdc40d7e4924bca" sys_domain="global" table="x_snc_tourney_ad_0_tournament_entrant" version="3" view="quickentry">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>user</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-04-08 17:47:30</sys_created_on>
+            <sys_id>9409ab15373c22102fdc40d7e4924b8d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="x_snc_tourney_ad_0_tournament_entrant" display_value="x_snc_tourney_ad_0_tournament_entrant" name="x_snc_tourney_ad_0_tournament_entrant" sys_domain="global" view="3fd8e715373c22102fdc40d7e4924bc5">44e8e715373c22102fdc40d7e4924bca</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-04-08 17:47:30</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>tournament</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-04-08 17:47:30</sys_created_on>
+            <sys_id>9409ab15373c22102fdc40d7e4924b8e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="x_snc_tourney_ad_0_tournament_entrant" display_value="x_snc_tourney_ad_0_tournament_entrant" name="x_snc_tourney_ad_0_tournament_entrant" sys_domain="global" view="3fd8e715373c22102fdc40d7e4924bc5">44e8e715373c22102fdc40d7e4924bca</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-04-08 17:47:30</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>x_snc_tourney_ad_0_tournament_entrant</caption>
+            <header>false</header>
+            <name>x_snc_tourney_ad_0_tournament_entrant</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-04-08 17:46:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>44e8e715373c22102fdc40d7e4924bca</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_tourney_ad_0_tournament_entrant</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+            <sys_update_name>sys_ui_section_44e8e715373c22102fdc40d7e4924bca</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-04-08 17:46:55</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="quickentry" name="quickentry">3fd8e715373c22102fdc40d7e4924bc5</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app">
+    <sys_app action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <can_edit_in_studio>true</can_edit_in_studio>
+        <enforce_license>log</enforce_license>
+        <guided_setup_guid/>
+        <hide_on_ui>false</hide_on_ui>
+        <ide_created>SNS</ide_created>
+        <installed_as_dependency>false</installed_as_dependency>
+        <js_level>es_latest</js_level>
+        <licensable>true</licensable>
+        <license/>
+        <license_category>none</license_category>
+        <license_definition/>
+        <license_model>none</license_model>
+        <logo>1df7df07ffa426102fdcffffffffffcb</logo>
+        <menu/>
+        <name>Tourney Admin Workspace</name>
+        <package_json/>
+        <private>false</private>
+        <restrict_table_access>false</restrict_table_access>
+        <runtime_access_tracking>permissive</runtime_access_tracking>
+        <scope>x_snc_tourney_ad_0</scope>
+        <scoped_administration>false</scoped_administration>
+        <short_description>A workspace for managing the the administration of a tournament</short_description>
+        <source>x_snc_tourney_ad_0</source>
+        <store_correlation_id/>
+        <store_url/>
+        <subscription_entitlement/>
+        <sys_class_name>sys_app</sys_class_name>
+        <sys_code/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-01 16:46:31</sys_created_on>
+        <sys_id>fae71787ffa426102fdcffffffffff22</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>anthony.bullard@snc</sys_updated_by>
+        <sys_updated_on>2025-04-30 19:38:00</sys_updated_on>
+        <template/>
+        <trackable>true</trackable>
+        <uninstall_blocked>false</uninstall_blocked>
+        <user_role/>
+        <vendor/>
+        <vendor_prefix/>
+        <version>1.1.0</version>
+    </sys_app>
+    <sys_translated_text action="delete_multiple" query="documentkey=fae71787ffa426102fdcffffffffff22"/>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes>700000</chunk_size_bytes>
+        <compressed>true</compressed>
+        <content_type>image/png</content_type>
+        <file_name>brackets.png</file_name>
+        <hash>525a5b3677023a70046f4d366e4abf5fd1d883aab175a12812c59b5e99619c88</hash>
+        <image_height>197</image_height>
+        <image_width>256</image_width>
+        <size_bytes>1177</size_bytes>
+        <size_compressed>1161</size_compressed>
+        <state>available</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-01 16:46:41</sys_created_on>
+        <sys_id>1df7df07ffa426102fdcffffffffffcb</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>anthony.bullard@snc</sys_updated_by>
+        <sys_updated_on>2025-04-30 19:37:36</sys_updated_on>
+        <table_name>sys_app</table_name>
+        <table_sys_id>fae71787ffa426102fdcffffffffff22</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAA/w==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="brackets.png" sys_id="1df7df07ffa426102fdcffffffffffcb">1df7df07ffa426102fdcffffffffffcb</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-01 16:46:41</sys_created_on>
+        <sys_id>5df7df07ffa426102fdcffffffffffcb</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>6wzwc+flkuJiYGDg9fRwCWJgYAQyGY5yMAPJnn93ngOp0gCfENf////fvXsXyHv69Onq1av37NnT1NQUEhIyefLk1NTULVu2ZGdnnz17tqur6/fv32/evDl69OinT58uXrxYUlKybNmyFy9e1NXVff36dfr06T4+PvPmzXN1dbWwsOjt7b1x40ZcXJy7uzsvL6+ioqK0tLSOjo6ZmZmmpma6bc8zBgbm+54ujiEVc97O7S5bZCDievjp0o6HCxc1eWUf//dfnc+q7JeEtYy2VE/67dTQd6d8tx04JNAU1CLgxKEIIUoapMv7Vm95GTbX8VGJX9IuX4jwBPZFMsprkoVLbx+xdPis/Ulo05MPP87Yz/c5Lrv1pc6rRnaDs/peTX9Z+tnEVX8KRvHOvZ3+l02YaYqU7a6G9nhmjQYmnxRbTtaAhs41Ig6MapvmtTBpHHAJ41rAIBzp78QokqCU3W/lsqe1c01tFPO07BWfK5pFpyc3t4XZCgmckdnOe1yXe4VJ7NRA7XnPw22FGnKZ6hi+GJkLPuTRWuc/m2GbcA6LQ8uNnTxA89bskHZgFGFoDWRgTTgKJBwSgRZGFJo3MGkwcC1m4DrQtbhBjnPG1rKvpme8cpa8sOWKYPEozxdwVvayFgtocW6wOjRp3rLb3aHWYheUHfy/cTEsBGp6BPTBumj+5IADh7kz7G3rLBZtCD+weD3jy1Uzthjckt8ZrZ1g77BINHU7AwfXgobX1w5LgGyVYQ04UPo6EeQsnT4mjQe7vhqwsQYwiLkzihTcrZJ4rLHga8ymt0xRG6Md7lj9jtxyaJ3Ubns+pqh02fsW3quvMzDsNmdkwDCvkC+SqbF36l53xlQDvqb/fRL5TMdKOUWvrWRYy/aV48Gmi48U/klxv/5R1RhznjGvsFqte73EwQUMXA2HgJ7YAPLJAgPsAXVBmfHGmk2aWgzS8gHf3Rv+i4g4crsKtlzoWvQ1uKReWDt9s4pn2v2iGIvjXacn3n5RGThfLazuy8mrvBwX/t7i/PSPSW1TEAPrjBNVQuCI1cQe69fkOD+8FQ3ou/5Wx0n5u3RMleYh11kmZmFWJ3dlXbFcEvD8o8iekw9b7yQ56IET5U7ntof8EpElNZaO6z789kq8KFj2TflN5v5J8om7rslO+lXvcfmZfl3199b18svFcpncS96lndxhZ8tzYWvZtzn7LaIjPaM6J2tO3XH2+utVLqvd2m/bXFl2bspsE+9ntzz+n+LlUL0Uqnf+vNFsr6/eoZumFKhnKlpzJnOa356rU3Mzd6n93bmyi54rnQ2PPpWk7mcp5bltUtCrziPCH58cnX4yqKiyK0XmlqbD2dTZay9H1axkF/J46mFxz/zuzXfR8Sb64RN52oROnto29/5Ej5RJXUc2fUn5EeWbYjKhcU/FWbfAo0qVikEm/4Mrtxapf/i3Nuvvy8Np3D/2ONT3bGD/e/Dg7dd/L9dY3d2z39rk7rFnwsB8aPvE/I1+/GzROZV3QCWPp6ufyzqnhCYAZ5P4FJkEAAA=</data>
+        <length>1536</length>
+        <position>1</position>
+        <sys_attachment display_value="brackets.png" sys_id="1df7df07ffa426102fdcffffffffffcb">1df7df07ffa426102fdcffffffffffcb</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-01 16:46:41</sys_created_on>
+        <sys_id>11f7df07ffa426102fdcffffffffffcc</sys_id>
+    </sys_attachment_doc>
+</record_update>

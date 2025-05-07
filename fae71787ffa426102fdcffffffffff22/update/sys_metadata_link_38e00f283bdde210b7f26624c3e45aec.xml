@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>5d5043283bdde210b7f26624c3e45a2a</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_tourney_ad_0_tourney_match">
+    <x_snc_tourney_ad_0_tourney_match action="INSERT_OR_UPDATE">
+        <match_end/>
+        <name>Allan Schwantd vs Chuck Tomasi</name>
+        <participant_a display_value="Allan Schwantd">38ceb6a43bdde210b7f26624c3e45a21</participant_a>
+        <participant_b display_value="Chuck Tomasi">0ace76a43bdde210b7f26624c3e45a92</participant_b>
+        <round display_value="Round 01">595043283bdde210b7f26624c3e45a29</round>
+        <sys_created_by>mgopw</sys_created_by>
+        <sys_created_on>2025-05-01 03:25:45</sys_created_on>
+        <sys_id>5d5043283bdde210b7f26624c3e45a2a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>mgopw</sys_updated_by>
+        <sys_updated_on>2025-05-01 03:25:45</sys_updated_on>
+        <tournament display_value="Active Tournament">2aae36a43bdde210b7f26624c3e45a39</tournament>
+        <winner/>
+    </x_snc_tourney_ad_0_tourney_match>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>mgopw</sys_created_by>
+        <sys_created_on>2025-05-01 03:28:10</sys_created_on>
+        <sys_id>38e00f283bdde210b7f26624c3e45aec</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Allan Schwantd vs Chuck Tomasi</sys_name>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_metadata_link_38e00f283bdde210b7f26624c3e45aec</sys_update_name>
+        <sys_updated_by>mgopw</sys_updated_by>
+        <sys_updated_on>2025-05-01 03:28:10</sys_updated_on>
+        <tablename>x_snc_tourney_ad_0_tourney_match</tablename>
+    </sys_metadata_link>
+</record_update>

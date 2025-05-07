@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_event">
+    <sys_ux_event action="INSERT_OR_UPDATE">
+        <description/>
+        <event_name>TOURNEY_ADMIN_CTRL#CREATE_NEXT_ROUND</event_name>
+        <explicit_api_name/>
+        <interfaces/>
+        <label>Create next round</label>
+        <props>[
+    {
+        "fieldType": "number",
+        "id": "VPI47ZfkzAExW93kBbe9P6ArB",
+        "interfaceApiName": "",
+        "label": "Round Number",
+        "mandatory": false,
+        "name": "roundNumber",
+        "readOnly": false,
+        "type": "number",
+        "typeMetadata": null
+    }
+]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <sys_class_name>sys_ux_event</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-08 15:38:25</sys_created_on>
+        <sys_id>ba004751377822102fdc40d7e4924b97</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Create next round</sys_name>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_ux_event_ba004751377822102fdc40d7e4924b97</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-25 21:07:59</sys_updated_on>
+    </sys_ux_event>
+    <sys_translated_text action="delete_multiple" query="documentkey=ba004751377822102fdc40d7e4924b97"/>
+</record_update>

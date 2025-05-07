@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_data_broker_transform">
+    <sys_ux_data_broker_transform action="INSERT_OR_UPDATE">
+        <acl_failure_result/>
+        <api_name>x_snc_tourney_ad_0.Decide Match</api_name>
+        <batch_exclude>false</batch_exclude>
+        <description>Sets the winner for a match</description>
+        <mutates_server_data>true</mutates_server_data>
+        <name>Decide Match</name>
+        <output_schema>[]</output_schema>
+        <private>false</private>
+        <props>[{&#13;
+    "name": "match",&#13;
+    "label": "Match",&#13;
+    "fieldType": "reference",&#13;
+    "valueType": "string",&#13;
+    "description": "Match sys_id",&#13;
+     "readOnly": false,&#13;
+    "mandatory": true,&#13;
+    "typeMetadata": {&#13;
+        "referenceTable": "x_snc_tourney_ad_0_tourney_match"&#13;
+    },&#13;
+    "defaultValue": null&#13;
+}, {&#13;
+    "name": "winner",&#13;
+    "label": "Winner",&#13;
+    "fieldType": "reference",&#13;
+    "valueType": "string",&#13;
+    "description": "Participant sys_id of the winner",&#13;
+     "readOnly": false,&#13;
+    "mandatory": true,&#13;
+    "typeMetadata": {&#13;
+        "referenceTable": "x_snc_tourney_ad_0_tournament_entrant"&#13;
+    },&#13;
+    "defaultValue": null&#13;
+}]</props>
+        <required_translations/>
+        <schema_version>1.0.0</schema_version>
+        <script><![CDATA[function transform(input) {
+	const matchGr = new GlideRecord('x_snc_tourney_ad_0_tourney_match');
+	matchGr.get(input.match);
+	matchGr.setValue('winner', input.winner);
+	const updated = matchGr.update();
+	if (!updated) {
+		throw new Error(`Could not update match: ${matchGr.getLastErrorMessage() ?? 'Unknown error'}`);
+	}
+}]]></script>
+        <sys_class_name>sys_ux_data_broker_transform</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-04-27 16:24:58</sys_created_on>
+        <sys_id>b45c8123ff8562106dc3ffffffffff29</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Decide Match</sys_name>
+        <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
+        <sys_update_name>sys_ux_data_broker_transform_b45c8123ff8562106dc3ffffffffff29</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-04-27 16:27:05</sys_updated_on>
+    </sys_ux_data_broker_transform>
+    <sys_translated_text action="delete_multiple" query="documentkey=b45c8123ff8562106dc3ffffffffff29"/>
+</record_update>
