@@ -6,18 +6,317 @@
         <component_dependencies/>
         <composition>[]</composition>
         <da_relay_models/>
-        <data>[]</data>
+        <data>[
+    {
+        "definition": {
+            "id": "9664d48053461010cbc2ddeeff7b128e",
+            "type": "COMPOSITE"
+        },
+        "elementId": "tournament_record",
+        "elementLabel": "Tournament Record",
+        "eventMappings": [],
+        "inputValues": {
+            "recordId": {
+                "binding": {
+                    "address": [
+                        "tourneySysId"
+                    ],
+                    "category": "props"
+                },
+                "type": "CONTEXT_BINDING"
+            },
+            "returnFieldMetadata": {
+                "type": "JSON_LITERAL",
+                "value": false
+            },
+            "returnFields": {
+                "type": "JSON_LITERAL",
+                "value": "end_datetime,event_name,start_datetime"
+            },
+            "returnTableMetadata": {
+                "type": "JSON_LITERAL",
+                "value": false
+            },
+            "table": {
+                "type": "JSON_LITERAL",
+                "value": "x_snc_tourney_ad_0_tournament"
+            }
+        },
+        "readEvaluationMode": "EAGER"
+    },
+    {
+        "definition": {
+            "id": "b997a84053021010cbc2ddeeff7b1228",
+            "type": "COMPOSITE"
+        },
+        "elementId": "tournament_participant",
+        "elementLabel": "Tournament Participants",
+        "eventMappings": [],
+        "inputValues": {
+            "encodedQuery": {
+                "transform": {
+                    "operands": {
+                        "container": [
+                            {
+                                "type": "JSON_LITERAL",
+                                "value": "tournament="
+                            },
+                            {
+                                "binding": {
+                                    "address": [
+                                        "tourneySysId"
+                                    ],
+                                    "category": "props"
+                                },
+                                "type": "CONTEXT_BINDING"
+                            }
+                        ],
+                        "type": "LIST_CONTAINER"
+                    },
+                    "operator": "CONCAT"
+                },
+                "type": "CLIENT_TRANSFORM"
+            },
+            "limit": {
+                "type": "JSON_LITERAL",
+                "value": "1000"
+            },
+            "offset": {
+                "type": "JSON_LITERAL",
+                "value": null
+            },
+            "orderBy": {
+                "type": "JSON_LITERAL",
+                "value": "sys_created_on"
+            },
+            "queryCategory": {
+                "type": "JSON_LITERAL",
+                "value": ""
+            },
+            "returnFieldMetadata": {
+                "type": "JSON_LITERAL",
+                "value": false
+            },
+            "returnFields": {
+                "type": "JSON_LITERAL",
+                "value": "user,user.last_name,user.first_name"
+            },
+            "sortType": {
+                "type": "JSON_LITERAL",
+                "value": "asc"
+            },
+            "table": {
+                "type": "JSON_LITERAL",
+                "value": "x_snc_tourney_ad_0_tournament_entrant"
+            }
+        },
+        "readEvaluationMode": "EAGER"
+    },
+    {
+        "definition": {
+            "id": "bba46ec077223010f5025df90f5a9920",
+            "type": "CLIENT_STATE"
+        },
+        "elementId": "participant_watcher",
+        "elementLabel": "Participant Watcher",
+        "eventMappings": [
+            {
+                "eventMappingId": "aaJMfEeehhzeeddBUpijjRAFaaiCqdddAV",
+                "isConfiguration": false,
+                "offRowStorageId": null,
+                "sourceEventApiName": "sn_record_watcher.RECORD_WATCHER#MESSAGE_RECEIVED",
+                "sourceEventCorrelationId": null,
+                "sourceEventDefinition": {
+                    "apiName": "sn_record_watcher.RECORD_WATCHER#MESSAGE_RECEIVED",
+                    "id": null,
+                    "type": "UXEVENT"
+                },
+                "sourceEventSysId": null,
+                "targets": [
+                    {
+                        "broker": null,
+                        "clientScript": null,
+                        "clientTransformScript": "",
+                        "conditional": null,
+                        "declarativeAction": null,
+                        "event": null,
+                        "operation": {
+                            "dataBrokerId": "b997a84053021010cbc2ddeeff7b1228",
+                            "operationName": "REFRESH",
+                            "parentResourceId": "tournament_participant",
+                            "payload": {
+                                "type": "JSON_LITERAL",
+                                "value": {}
+                            }
+                        },
+                        "targetId": "GIvjleehhFmBaaddddeeddIaaBSbbHWggGeeQ",
+                        "type": "DATABROKER_OP"
+                    },
+                    {
+                        "broker": null,
+                        "clientScript": null,
+                        "clientTransformScript": "",
+                        "conditional": null,
+                        "declarativeAction": null,
+                        "event": {
+                            "apiName": "x_snc_tourney_ad_0.TOURNEY_ADMIN_CTRL#PARTICIPANT_ADDED_SUCCESSFULLY",
+                            "payload": {
+                                "type": "JSON_LITERAL",
+                                "value": {}
+                            },
+                            "sysId": "53984fbeff0922106dc3ffffffffff3b"
+                        },
+                        "operation": null,
+                        "targetId": "yniCvPTccAaacgjjqaaKXiaajjyjqX",
+                        "type": "EVENT"
+                    }
+                ]
+            }
+        ],
+        "inputValues": {
+            "filterConditions": {
+                "transform": {
+                    "operands": {
+                        "container": [
+                            {
+                                "type": "JSON_LITERAL",
+                                "value": "tournament="
+                            },
+                            {
+                                "binding": {
+                                    "address": [
+                                        "tourneySysId"
+                                    ],
+                                    "category": "props"
+                                },
+                                "type": "CONTEXT_BINDING"
+                            }
+                        ],
+                        "type": "LIST_CONTAINER"
+                    },
+                    "operator": "CONCAT"
+                },
+                "type": "CLIENT_TRANSFORM"
+            },
+            "subscribe": {
+                "type": "JSON_LITERAL",
+                "value": true
+            },
+            "table": {
+                "type": "JSON_LITERAL",
+                "value": "x_snc_tourney_ad_0_tournament_entrant"
+            }
+        },
+        "readEvaluationMode": "EAGER"
+    },
+    {
+        "definition": {
+            "id": "21baf732ff8922106dc3ffffffffffd5",
+            "type": "TRANSFORM"
+        },
+        "elementId": "create_tournament_round",
+        "elementLabel": "Create Tournament Round",
+        "eventMappings": [],
+        "inputValues": {
+            "tournament": {
+                "type": "JSON_LITERAL",
+                "value": null
+            }
+        },
+        "readEvaluationMode": "EXPLICIT"
+    },
+    {
+        "definition": {
+            "id": "b997a84053021010cbc2ddeeff7b1228",
+            "type": "COMPOSITE"
+        },
+        "elementId": "get_rounds",
+        "elementLabel": "Get Rounds",
+        "eventMappings": [],
+        "inputValues": {
+            "encodedQuery": {
+                "type": "JSON_LITERAL",
+                "value": ""
+            },
+            "limit": {
+                "type": "JSON_LITERAL",
+                "value": "1000"
+            },
+            "offset": {
+                "type": "JSON_LITERAL",
+                "value": null
+            },
+            "orderBy": {
+                "type": "JSON_LITERAL",
+                "value": null
+            },
+            "queryCategory": {
+                "type": "JSON_LITERAL",
+                "value": ""
+            },
+            "returnFieldMetadata": {
+                "type": "JSON_LITERAL",
+                "value": false
+            },
+            "returnFields": {
+                "type": "JSON_LITERAL",
+                "value": null
+            },
+            "sortType": {
+                "type": "JSON_LITERAL",
+                "value": "asc"
+            },
+            "table": {
+                "type": "JSON_LITERAL",
+                "value": "x_snc_tourney_ad_0_tourney_round"
+            }
+        },
+        "readEvaluationMode": "EAGER"
+    }
+]</data>
         <description/>
         <disable_auto_reflow>false</disable_auto_reflow>
-        <dispatched_events/>
+        <dispatched_events>53984fbeff0922106dc3ffffffffff3b</dispatched_events>
         <ext_controller_dep/>
         <extends/>
         <extension_point/>
         <form_factors>{}</form_factors>
-        <handled_events/>
+        <handled_events>ba004751377822102fdc40d7e4924b97</handled_events>
         <interactions/>
         <interfaces/>
-        <internal_event_mappings>{}</internal_event_mappings>
+        <internal_event_mappings>{
+    "x_snc_tourney_ad_0.TOURNEY_ADMIN_CTRL#CREATE_NEXT_ROUND": [
+        {
+            "broker": null,
+            "clientScript": null,
+            "clientTransformScript": "",
+            "conditional": null,
+            "declarativeAction": null,
+            "event": null,
+            "operation": {
+                "dataBrokerId": "21baf732ff8922106dc3ffffffffffd5",
+                "operationName": "EXECUTE",
+                "parentResourceId": "create_tournament_round",
+                "payload": {
+                    "container": {
+                        "tournament": {
+                            "binding": {
+                                "address": [
+                                    "tourneySysId"
+                                ],
+                                "category": "props"
+                            },
+                            "type": "CONTEXT_BINDING"
+                        }
+                    },
+                    "type": "MAP_CONTAINER"
+                }
+            },
+            "targetId": "eccSgueehhqfAEFjjjggoAggpWgginiN",
+            "type": "DATABROKER_OP"
+        }
+    ]
+}</internal_event_mappings>
         <layout>{
     "default": {
         "children": null,
@@ -34,28 +333,138 @@
 }</layout>
         <macroponent_dependencies/>
         <name>Tourney Admin Controller</name>
-        <output_prop_mapping>{}</output_prop_mapping>
-        <props>[]</props>
-        <required_translations>[]</required_translations>
+        <output_prop_mapping>{
+    "participants": {
+        "binding": {
+            "address": [
+                "tournament_participant",
+                "results"
+            ]
+        },
+        "type": "DATA_OUTPUT_BINDING"
+    },
+    "state": {
+        "binding": {
+            "address": [
+                "status"
+            ]
+        },
+        "type": "STATE_BINDING"
+    },
+    "tourneyLoaded": {
+        "operation": {
+            "operand": {
+                "transform": {
+                    "operands": {
+                        "container": [
+                            {
+                                "binding": {
+                                    "address": [
+                                        "tournament_record",
+                                        "result",
+                                        "event_name",
+                                        "value"
+                                    ]
+                                },
+                                "type": "DATA_OUTPUT_BINDING"
+                            }
+                        ],
+                        "type": "LIST_CONTAINER"
+                    },
+                    "operator": "EMPTY"
+                },
+                "type": "CLIENT_TRANSFORM"
+            },
+            "operator": "NOT"
+        },
+        "type": "UNARY"
+    },
+    "tourneyName": {
+        "binding": {
+            "address": [
+                "tournament_record",
+                "result",
+                "event_name",
+                "displayValue"
+            ]
+        },
+        "type": "DATA_OUTPUT_BINDING"
+    }
+}</output_prop_mapping>
+        <props>[
+    {
+        "description": "Tournament sys_id",
+        "disabled": false,
+        "fieldType": "string",
+        "id": "tourneySysId",
+        "label": "tourneySysId",
+        "mandatory": false,
+        "name": "tourneySysId",
+        "readOnly": false,
+        "selectable": false,
+        "typeMetadata": {
+            "translatable": false
+        },
+        "valueType": "string"
+    }
+]</props>
+        <required_translations>[ ]</required_translations>
         <root_component/>
         <root_component_config/>
         <root_component_definition/>
         <schema_version>1.0.0</schema_version>
         <state_persistence_config/>
-        <state_properties>[]</state_properties>
+        <state_properties>[
+    {
+        "description": null,
+        "fieldType": "string",
+        "initialValue": {
+            "type": "JSON_LITERAL",
+            "value": "not_started"
+        },
+        "label": "newClientStateParam1",
+        "name": "status",
+        "shape": "",
+        "valueType": "string"
+    },
+    {
+        "description": null,
+        "fieldType": "json",
+        "initialValue": {
+            "type": "JSON_LITERAL",
+            "value": null
+        },
+        "label": "newClientStateParam1",
+        "name": "currentRound",
+        "shape": "",
+        "valueType": "json"
+    },
+    {
+        "description": null,
+        "fieldType": "boolean",
+        "initialValue": {
+            "type": "JSON_LITERAL",
+            "value": null
+        },
+        "label": "newClientStateParam1",
+        "name": "roundsLoaded",
+        "shape": "",
+        "valueType": "boolean"
+    }
+]</state_properties>
         <style_config>{}</style_config>
         <sys_class_name>sys_ux_macroponent</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2025-04-07 19:53:03</sys_created_on>
         <sys_id>fd2c7a0937f022102fdc40d7e4924b6d</sys_id>
-        <sys_mod_count>67</sys_mod_count>
+        <sys_mod_count>75</sys_mod_count>
         <sys_name>Tourney Admin Controller</sys_name>
         <sys_package display_value="Tourney Admin Workspace" source="x_snc_tourney_ad_0">fae71787ffa426102fdcffffffffff22</sys_package>
         <sys_policy/>
         <sys_scope display_value="Tourney Admin Workspace">fae71787ffa426102fdcffffffffff22</sys_scope>
         <sys_update_name>sys_ux_macroponent_fd2c7a0937f022102fdc40d7e4924b6d</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2025-04-28 14:08:39</sys_updated_on>
+        <sys_updated_on>2025-05-07 21:50:01</sys_updated_on>
     </sys_ux_macroponent>
     <sys_translated_text action="delete_multiple" query="documentkey=fd2c7a0937f022102fdc40d7e4924b6d"/>
 </record_update>
